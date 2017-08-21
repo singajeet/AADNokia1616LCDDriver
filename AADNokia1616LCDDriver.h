@@ -77,6 +77,7 @@ class AADNokia1616LCDDriver : public AADLCDDriversInterface
     AADNokia1616LCDDriver();
     virtual ~AADNokia1616LCDDriver();
 
+    virtual void renderFrame(byte x, byte y, byte w, byte h, unsigned int* pixels, int size);
     virtual unsigned int getMaxHeight(void);
     virtual unsigned int getMaxWidth(void);
     virtual void clear(void);

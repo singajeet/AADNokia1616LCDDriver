@@ -164,6 +164,13 @@ void AADNokia1616LCDDriver::_lcd_fill(byte x, byte y, byte w, byte h, unsigned i
 	  }
 }
 
+void AADNokia1616LCDDriver::renderFrame(byte x, byte y, byte w, byte h, unsigned int* pixels, int size){
+	_lcd_window(x, y, w, h);
+	for(int i=0; i<size; i++){
+		_lcd_write16(pixels[i]);
+	}
+}
+
 AADNokia1616LCDDriver::AADNokia1616LCDDriver(){
   _begin();
   _set_pin_mode();
