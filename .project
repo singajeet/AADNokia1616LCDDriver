@@ -3,6 +3,10 @@
 	<name>AADNokia1616LCDDriver</name>
 	<comment></comment>
 	<projects>
+		<project>AADColorsLib</project>
+		<project>AADConfigLib</project>
+		<project>AADDriversInterface</project>
+		<project>AADFontsLib</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

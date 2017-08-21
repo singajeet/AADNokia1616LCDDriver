@@ -71,6 +71,7 @@ class AADNokia1616LCDDriver : public AADLCDDriversInterface
     void _lcd_write16(unsigned int dat);
     void _lcd_window(byte x, byte y, byte w, byte h);
     void _lcd_fill_all(unsigned int color);
+    void _lcd_fill(byte x, byte y, byte w, byte h, unsigned int color);
 
   public:
     AADNokia1616LCDDriver();
@@ -89,6 +90,7 @@ class AADNokia1616LCDDriver : public AADLCDDriversInterface
     virtual void v_line(byte x, byte y, byte h, unsigned int color);
     virtual void h_line(byte x, byte y, byte w, unsigned int color);
     virtual void rectangle(byte x, byte y, byte w, byte h, unsigned int color);
+    virtual void fill(byte x, byte y, byte w, byte h, unsigned int color);
     virtual void bitmap(byte x, byte y, const byte *bitmap, byte w, byte h, unsigned int color);
 
 

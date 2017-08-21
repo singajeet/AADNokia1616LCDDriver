@@ -152,6 +152,18 @@ void AADNokia1616LCDDriver::_lcd_fill_all(unsigned int color){
   }
 }
 
+void AADNokia1616LCDDriver::_lcd_fill(byte x, byte y, byte w, byte h, unsigned int color){
+	_lcd_window(0, 0, w, h);
+	  byte i=h;
+	  byte j;
+	  while(i--){
+		j=w;
+		while(j--){
+		  _lcd_write16((color));
+		}
+	  }
+}
+
 AADNokia1616LCDDriver::AADNokia1616LCDDriver(){
   _begin();
   _set_pin_mode();
@@ -309,6 +321,10 @@ void AADNokia1616LCDDriver::rectangle(byte x, byte y, byte w, byte h, unsigned i
   h_line(x, y+h-1, w, color);
   v_line(x, y, h, color);
   v_line(x+w-1, y, h, color);
+}
+
+void AADNokia1616LCDDriver::fill(byte x, byte y, byte w, byte h, unsigned int color){
+	_lcd_fill(x, y, w, h, color);
 }
 
 void AADNokia1616LCDDriver::bitmap(byte x, byte y, const byte *bitmap, byte w, byte h, unsigned int color){
